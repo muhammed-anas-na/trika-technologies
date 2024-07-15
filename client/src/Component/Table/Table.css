@@ -1,0 +1,76 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+
+  /* Pagination.css */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pagination-button {
+  padding: 0.25rem 0.75rem;
+  margin: 0 0.25rem;
+  background-color: #e5e7eb; /* Tailwind's gray-300 */
+  border-radius: 0.25rem; /* Tailwind's rounded */
+}
+
+.pagination-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.pagination-button.current {
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+  color: white;
+}
+.selectedRow{
+  background-color: #ddd;
+}
+.searchParent{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+input[type="text"]{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  width: 400px;
+}
+
+input[type="text"]:focus{
+  outline: none;
+}
+.deleteBtn{
+  background-color: red;
+  padding: 5px 20px;
+  color:white;
+  font-weight: 400;
+  border-radius: 10px;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.empty{
+  display: flex;
+  justify-content: center;
+}
+.empty h1{
+  font-size: 40px;
+}
