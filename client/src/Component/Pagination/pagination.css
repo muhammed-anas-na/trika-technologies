@@ -1,0 +1,23 @@
+  /* Pagination.css */
+  .pagination-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .pagination-button {
+    padding: 0.25rem 0.75rem;
+    margin: 0 0.25rem;
+    background-color: #e5e7eb; /* Tailwind's gray-300 */
+    border-radius: 0.25rem; /* Tailwind's rounded */
+  }
+  
+  .pagination-button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .pagination-button.current {
+    background-color: #3b82f6; /* Tailwind's blue-500 */
+    color: white;
+  }

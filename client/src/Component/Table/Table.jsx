@@ -2,6 +2,7 @@ import { getProductsData, getSearchResult } from '../../utils/Axios/Methods/GET'
 import './Table.css';
 import { useEffect , useState } from 'react';
 import useDebounce from '../../Hooks/useDebounce';
+import Pagination from '../Pagination/Pagination';
 
 const Table = () => {
   const [products ,  setProducts] = useState([]);
@@ -36,7 +37,7 @@ const Table = () => {
     setProducts(
       products.filter((product) => !selectedRow.includes(product.id))
     )
-    selectedRow([])
+    setSelectedRow([])
   }
   return (
     <>
@@ -100,41 +101,7 @@ const Table = () => {
         </tbody>
     </table>
       
-    <div className='pagination-container'>
-      
-      <div>
-        <button 
-        className='deleteBtn'
-        onClick={handleDelete}
-        >Delete</button>  
-      </div>
-      
-      <div>
-      <button
-        className='pagination-button'
-        disabled={currentPage === 1}
-        onClick={()=>{setCurrentPage(prev=>prev-1)}}
-        >&lt;</button>
-
-      <button
-      disabled="true"
-      className='pagination-button'>
-        {currentPage}
-      </button>
-
-      <button
-      onClick={()=>setCurrentPage(prev=>prev+1)}
-      className='pagination-button'>
-        {currentPage+1}
-      </button>
-
-        <button
-        disabled={currentPage === totalPages}
-        className='pagination-button'
-        onClick={()=>{setCurrentPage(prev=>prev+1)}}
-        >&gt;</button>
-      </div>
-    </div>
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} handleDelete={handleDelete} totalPages={totalPages}/>
     
     </>
   );
